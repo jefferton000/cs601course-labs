@@ -1,0 +1,52 @@
+UNIX "ls" Utility in Java
+Write a class called ls whose main(String[] args) method prints to standard out the files/directories contained in
+
+the current directory if no args[0] specified, or,
+the directory mentioned in args[0].
+Don't worry about formatting the output; just print one file or directory name per output line.
+
+The class will look like:
+
+public class ls {
+    public static void main(String[] args) throws IOException {
+	...
+    }
+}
+You will need the javadoc for File. Write a for-loop that walks the array of file names returned to you from File.list().
+
+
+UNIX "cat" Utility in Java
+Write a class called cat whose main(String[] args) method reads all the text from the file mentioned on the command-line (args[0]) line-by-line and prints it to standard out.
+
+Open a FileReader and then wrap it with a BufferedReader so you can use method readLine() to get a line of input. Note that readLine() strips the '\n' character off the end of the line so use System.out.println() to spit the lines out.
+
+public class cat {
+    public static void main(String[] args) throws IOException {
+        if ( args.length==0 ) {
+            return;
+        }
+	String fileName = args[0];
+	...
+    }
+}
+
+
+UNIX "cp" Utility in Java
+If you have time...
+
+Write a class called cp whose main(String[] args) method copies one file (could be binary!) to another (args[0] to args[1]).
+
+You should read the files byte-by-byte so use FileInputStream and FileOutputStream. Use read() to get a single char and use write(char) to write the character.
+
+Don't forget to close the files properly using the finally clause.
+
+public class cp {
+    public static void main(String[] args) throws IOException {
+        if ( args.length!=2 ) {
+            return;
+        }
+	String fromFileName = args[0];
+	String toFileName = args[1];
+	...
+    }
+}
